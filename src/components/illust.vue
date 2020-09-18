@@ -48,7 +48,7 @@
       :wh="wh"
     />
 
-    <!-- <rect
+    <rect
       v-if="r() > 0.3"
       id="overlay"
       x="0"
@@ -56,7 +56,7 @@
       :width="wh"
       :height="wh"
       :fill="`url(#gradtoopaque)`"
-    /> -->
+    />
   </svg>
 </template>
 
@@ -80,8 +80,8 @@ const possibilities = [
   randomTriangle,
   randomSquarePath,
   randomLine,
-  // randomPath,
-  // randomRoundShape,
+  randomPath,
+  randomRoundShape,
 ]
 
 const r = () => parseFloat(Math.random().toFixed(4))
@@ -91,7 +91,7 @@ const randomHexColor = () =>
 export default {
   props: {
     elementCount: {
-      default: Math.floor(r() * 60) + 2,
+      default: Math.floor(r() * 100) + 2,
     },
     maskCount: {
       default: Math.floor(r() * 3),
@@ -104,7 +104,7 @@ export default {
         randomHexColor(),
         randomHexColor(),
         randomHexColor(),
-        randomHexColor(),
+        '#ffffff',
       ],
     },
   },
@@ -123,8 +123,8 @@ export default {
   },
   computed: {
     bgColor() {
-      return this.colors[0]
-      // return `url(#grad${Math.ceil(r() * this.gradientCount)})`
+      // return this.colors[0]
+      return `url(#grad${Math.ceil(r() * this.gradientCount)})`
     },
     boundsMod() {
       return 5

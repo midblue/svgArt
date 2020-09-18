@@ -24,7 +24,7 @@ export default {
     return {
       wh: 700,
       render: 1,
-      colors: ['white', '#f00', '#00f'], //['#fff', '#02ADCC', '#fb0'], //['#fff', '#f00'], //, //['white', 'black'], //
+      colors: undefined, //['white', '#f00', '#00f'], //['#fff', '#02ADCC', '#fb0'], //['#fff', '#f00'], //, //['white', 'black'], //
     }
   },
   mounted() {
